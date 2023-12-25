@@ -43,48 +43,46 @@ const Main = () => {
     }
   ]
 
-  const [currentPage, setCurrentPage] = useState({pageNumber: 1, info:[]})
+  const [currentPage, setCurrentPage] = useState(1)
+  const [currentPageInfo, setCurrentPageInfo] = useState<any[]>([])
   useEffect(() => {
 
     const getInfo = async() => {
-      const newPage = allLinks.filter(page => page.pageNumber === currentPage.pageNumber)[0]
+      const newPage = allLinks.filter(page => page.pageNumber === currentPage)[0]
       const res = await fetch(newPage.link)
       const data = await res.json()
-      
+      setCurrentPageInfo(data.results)
     }
-
     getInfo()
   }, [currentPage])
 
   return (
     <div className='main-page'>
         
-        {/* {currentPage.info.length ? 
+        {currentPageInfo.length ? 
           <>
             <div className='cards-wrapper' >
-              {currentPage.info.map((character) => 
+              {currentPageInfo.map((character) => 
                 <Card name={character.name} birth={character.birth_year} gender={character.gender} />
               )}
             </div>
 
             <div className='pagination'>
-              <div onClick={()=>{}} className={1 === currentPage.pageNumber ? 'page active' : 'page'}>1</div>
-              <div onClick={()=>{}} className={2 === currentPage.pageNumber ? 'page active' : 'page'}>2</div>
-              <div onClick={()=>{}} className={3 === currentPage.pageNumber ? 'page active' : 'page'}>3</div>
-              <div onClick={()=>{}} className={4 === currentPage.pageNumber ? 'page active' : 'page'}>4</div>
-              <div onClick={()=>{}} className={5 === currentPage.pageNumber ? 'page active' : 'page'}>5</div>
-              <div onClick={()=>{}} className={6 === currentPage.pageNumber ? 'page active' : 'page'}>6</div>
-              <div onClick={()=>{}} className={7 === currentPage.pageNumber ? 'page active' : 'page'}>7</div>
-              <div onClick={()=>{}} className={8 === currentPage.pageNumber ? 'page active' : 'page'}>8</div>
-              <div onClick={()=>{}} className={9 === currentPage.pageNumber ? 'page active' : 'page'}>9</div>
+              <div onClick={()=>setCurrentPage(1)} className={1 === currentPage ? 'page active' : 'page'}>1</div>
+              <div onClick={()=>setCurrentPage(2)} className={2 === currentPage ? 'page active' : 'page'}>2</div>
+              <div onClick={()=>setCurrentPage(3)}  className={3 === currentPage ? 'page active' : 'page'}>3</div>
+              <div onClick={()=>setCurrentPage(4)}  className={4 === currentPage ? 'page active' : 'page'}>4</div>
+              <div onClick={()=>setCurrentPage(5)}  className={5 === currentPage ? 'page active' : 'page'}>5</div>
+              <div onClick={()=>setCurrentPage(6)}  className={6 === currentPage ? 'page active' : 'page'}>6</div>
+              <div onClick={()=>setCurrentPage(7)}  className={7 === currentPage ? 'page active' : 'page'}>7</div>
+              <div onClick={()=>setCurrentPage(8)}  className={8 === currentPage ? 'page active' : 'page'}>8</div>
+              <div onClick={()=>setCurrentPage(9)}  className={9 === currentPage ? 'page active' : 'page'}>9</div>
             </div> 
           </>
       
         :
          <Loader/>
-      } */}
-
-        <Loader/>
+      }
 
     </div>
 
