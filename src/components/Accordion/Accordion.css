@@ -1,0 +1,19 @@
+.accordion{
+    min-width: 500px;
+    background: #ccc;
+    color: black;
+    border-radius: 12px;
+    padding: 10px;
+}
+.panel {
+    padding: 0 18px;
+    background: rgb(15, 15, 15);
+    color: white;
+    border-radius: 12px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+  }
+.panel.active{
+    max-height: 250px;
+}

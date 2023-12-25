@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+.person-page{
+    background: rgb(41, 40, 40);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 30px;
+    font-family: 'JetBrains Mono';
+}
+
+.info-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: rgb(15, 15, 15);
+    padding: 30px;
+    border-radius: 12px;
+}
+.person-about-wrapper p {
+    background: rgb(41, 40, 40);
+    padding: 15px;
+    border-radius: 12px;
+}
+
+
+.person-about-wrapper{
+    display: grid;
+    grid-template: repeat(2, auto)/repeat(4,1fr);
+    gap: 20px;
+}
+@media (max-width:540px) {
+    .person-about-wrapper{
+        grid-template: repeat(2, auto)/repeat(1,1fr);
+    }
+}
+
+.person-name{
+    font-size: 24px;
+    font-weight: 900;
+    
+}
+
+

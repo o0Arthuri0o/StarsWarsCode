@@ -1,0 +1,24 @@
+.big-circle {
+    width: 15vh;
+    height: 15vh;
+    background: linear-gradient(#ffd900 , transparent);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: rotation 2s infinite linear;
+}
+@keyframes rotation {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.small-circle{
+    background: rgb(41, 40, 40);
+    width: 13vh;
+    height: 13vh;
+    border-radius: 50%;
+}

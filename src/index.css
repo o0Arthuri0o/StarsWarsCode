@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'StarJedi';
+  src: url('./assets/starjedi_cyrillic.otf');
+}
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
