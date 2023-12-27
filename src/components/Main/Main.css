@@ -2,10 +2,12 @@
 .main-page{
     background: rgb(41, 40, 40);
     color: white;
-    min-height: 100vh;
+    min-height: 100%;
+    /* max-height: 100vh; */
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     padding: 30px;
     font-family: 'JetBrains Mono';
 }
@@ -20,16 +22,25 @@
 
 
 .pagination {
-    margin-top: 100px;
+    margin-top: 50px;
     display: flex;
     gap: 2vw;
 }
+
 .page{
     color: rgb(255, 217, 0);
     background: rgb(15, 15, 15);
     padding: 10px 20px;
     border-radius: 12px;
     font-weight: 900;
+}
+@media(max-width: 540px) {
+    .page{
+        padding: 5px 10px;
+    }
+    .pagination{
+        gap: 1vw;
+    }
 }
 .page.active {
     -webkit-box-shadow: 0px 0px 50px 37px rgba(255, 217, 0, 0.25);

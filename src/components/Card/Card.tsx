@@ -1,8 +1,10 @@
 import React from 'react'
 import './Card.css'
-const Card = ({name, birth, gender}) => {
+import { useNavigate } from 'react-router-dom'
+const Card = ({name, birth, gender, character, setPersonInfo}) => {
+  const nav = useNavigate()
   return (
-    <div className='card'>
+    <div onClick={()=>{setPersonInfo(character), nav('/person')}} className='card'>
         <p className='person-name'>{name}</p>
         <div className='person-parameters'>
             <p>{`Birth year: ${birth}`}</p>

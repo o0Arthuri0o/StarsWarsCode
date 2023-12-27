@@ -6,6 +6,8 @@ import { Link, Route, Routes } from 'react-router-dom'
 import Person from './components/Person/Person'
 
 function App() {
+  
+  const [personInfo, setPersonInfo] = useState()
 
   return (
     <>
@@ -15,8 +17,8 @@ function App() {
       </Link>
 
       <Routes>
-        <Route path='/' element={<Main/>} />
-        <Route path='/person' element={<Person/>} />
+        <Route path='/' element={<Main setPersonInfo={setPersonInfo} />} />
+        <Route path='/person' element={<Person personInfo={personInfo} />} />
       </Routes>
     </>
   )
