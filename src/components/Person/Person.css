@@ -42,5 +42,9 @@
     font-weight: 900;
     
 }
+.accordions-wrapper{
+    display: grid;
+    gap: 20px;
+}
 
 

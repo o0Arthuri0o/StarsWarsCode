@@ -1,19 +1,42 @@
 .accordion{
-    min-width: 500px;
+    width: 87vw;
+    max-width: 969px;
     background: #ccc;
     color: black;
     border-radius: 12px;
     padding: 10px;
 }
 .panel {
-    padding: 0 18px;
+    margin-top: 20px;
+    padding: 0px 20px;
     background: rgb(15, 15, 15);
     color: white;
     border-radius: 12px;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-in-out;
-  }
+    display: grid;
+    gap: 10px;
+}
+
 .panel.active{
     max-height: 250px;
+}
+.accordion-name {
+    display: flex;
+    justify-content: space-between;
+    color: rgb(15, 15, 15);
+}
+.accordion-name p {
+    background-color:  rgb(255, 217, 0);
+    padding: 10px 10px;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 20px;
+}
+.accordion-name p:last-child{
+    font-size: 24px;
+    padding: 10px 20px;
+    font-weight: 900;
 }
